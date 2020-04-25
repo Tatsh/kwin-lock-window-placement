@@ -1,0 +1,22 @@
+{
+  "name": "kwin-lock-window-placement",
+  "version": "0.0.1",
+  "description": "Kwin script to lock a window in place.",
+  "main": "contents/code/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tatsh/kwin-lock-window-placement.git"
+  },
+  "keywords": [
+    "kwin"
+  ],
+  "author": "Andrew Udvare",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tatsh/kwin-lock-window-placement/issues"
+  },
+  "homepage": "https://github.com/Tatsh/kwin-lock-window-placement#readme"
+}
