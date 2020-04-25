@@ -37,4 +37,4 @@ registerUserActionsMenu(function () {
       },
     };
   };
-});
+}());
