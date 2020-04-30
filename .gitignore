@@ -2,18 +2,18 @@
 # *.com
 *.class
 *.dll
+*.egg-info/
 *.exe
 *.o
-*.so
 *.pyc
 *.pyo
+*.so
 __pycache__/
-*.egg-info/
 
 # Backups
-*~
-*.swp*
 *.kate-swp
+*.swp*
+*~
 
 # KDevelop
 .kdev4/
@@ -23,12 +23,15 @@ __pycache__/
 .mypy_cache/
 
 # OS generated files
-.directory
 .DS_Store
 .DS_Store?
-._*
 .Spotlight-V100/
 .Trashes/
-ehthumbs.db
+._*
+.directory
 Thumbs.db
+ehthumbs.db
+
+# This project
+*.tsbuildinfo
 /src/**/*.js
