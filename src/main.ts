@@ -11,23 +11,23 @@ registerUserActionsMenu(
       triggered: (action: Action) => {
         if (action.checked) {
           callbacks[client.windowId] = forceGeometryCallback(client.geometry);
+          client.clientFinishUserMovedResized.connect(
+            callbacks[client.windowId],
+          );
           client.clientStartUserMovedResized.connect(
             callbacks[client.windowId],
           );
           client.clientStepUserMovedResized.connect(
             callbacks[client.windowId],
           );
-          client.clientFinishUserMovedResized.connect(
+        } else {
+          client.clientFinishUserMovedResized.disconnect(
             callbacks[client.windowId],
           );
-        } else {
           client.clientStartUserMovedResized.disconnect(
             callbacks[client.windowId],
           );
           client.clientStepUserMovedResized.disconnect(
-            callbacks[client.windowId],
-          );
-          client.clientFinishUserMovedResized.disconnect(
             callbacks[client.windowId],
           );
           delete callbacks[client.windowId];
