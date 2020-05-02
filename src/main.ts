@@ -1,10 +1,10 @@
 registerUserActionsMenu(
   (() => {
-    const callbacks: { [x: string]: SignalCallback } = {};
-    const forceGeometryCallback = (geometry: Geometry) => (client: Client) => {
+    const callbacks: { [x: string]: Slot } = {};
+    const forceGeometryCallback = (geometry: WindowGeometry) => (client: KwinClient) => {
       client.geometry = geometry;
     };
-    return (client: Client) => ({
+    return (client: KwinClient) => ({
       checkable: true,
       checked: !!callbacks[client.windowId],
       text: 'Locked',
