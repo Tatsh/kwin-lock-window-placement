@@ -1,16 +1,15 @@
-registerUserActionsMenu(
-  (() => {
-    const callbacks: { [x: string]: Slot } = {};
-    const forceGeometryCallback = (geometry: WindowGeometry) => (client: KwinClient) => {
-      client.geometry = geometry;
-    };
-    return (client: KwinClient) => ({
+(() => {
+  const callbacks: { [x: string]: Slot } = {};
+  registerUserActionsMenu(
+    (client: KwinClient) => ({
       checkable: true,
       checked: !!callbacks[client.windowId],
       text: 'Locked',
       triggered: (action: Action) => {
         if (action.checked) {
-          callbacks[client.windowId] = forceGeometryCallback(client.geometry);
+          callbacks[client.windowId] = ((geometry: WindowGeometry) => (client: KwinClient) => {
+            client.geometry = geometry;
+          })(client.geometry);
           client.clientFinishUserMovedResized.connect(
             callbacks[client.windowId],
           );
@@ -33,6 +32,6 @@ registerUserActionsMenu(
           delete callbacks[client.windowId];
         }
       },
-    });
-  })(),
-);
+    })
+  );
+})();
